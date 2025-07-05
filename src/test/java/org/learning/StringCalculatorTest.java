@@ -43,5 +43,16 @@ public class StringCalculatorTest {
         assertEquals(expectedMessage, exception.getMessage());
     }
 
+    @Test
+    public void testStringContainMultipleNegativeNumbersForCustomSingleCharacterDelimiter() {
+
+        ContainsNegativeNumbersException exception = assertThrows(ContainsNegativeNumbersException.class, () -> {
+            calculator.add("//:\n1:-2:3:-5");
+        });
+
+        String expectedMessage = "negative numbers not allowed <-2,-5>";
+        assertEquals(expectedMessage, exception.getMessage());
+    }
+
 
 }
