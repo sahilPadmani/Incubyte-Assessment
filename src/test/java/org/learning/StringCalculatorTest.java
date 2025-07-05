@@ -26,5 +26,9 @@ public class StringCalculatorTest {
         assertEquals(10, calculator.add("1,2,3,4"));
     }
 
+    @Test
+    public void testCustomSingleCharacterDelimiter() {
+        assertEquals(6, calculator.add("//;\n1;2;3"));
+    }
 
 }
