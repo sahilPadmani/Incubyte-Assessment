@@ -58,4 +58,9 @@ public class StringCalculatorTest {
     public void testEmptyCustomSingleCharacterDelimiterForEmpty() {
         assertEquals(0, calculator.add("//;\n"));
     }
+
+    @Test
+    public void testInvalidStringFormat() {
+        assertThrows(RuntimeException.class, () -> calculator.add("1,,"));
+    }
 }
