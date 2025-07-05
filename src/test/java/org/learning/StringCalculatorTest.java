@@ -63,4 +63,9 @@ public class StringCalculatorTest {
     public void testInvalidStringFormat() {
         assertThrows(RuntimeException.class, () -> calculator.add("1,,"));
     }
+
+    @Test
+    public void testInvalidFormat() {
+        assertThrows(RuntimeException.class, () -> calculator.add("1,\n2"));
+    }
 }
