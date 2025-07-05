@@ -54,5 +54,8 @@ public class StringCalculatorTest {
         assertEquals(expectedMessage, exception.getMessage());
     }
 
-
+    @Test
+    public void testEmptyCustomSingleCharacterDelimiterForEmpty() {
+        assertEquals(0, calculator.add("//;\n"));
+    }
 }
