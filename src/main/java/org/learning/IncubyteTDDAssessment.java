@@ -15,17 +15,17 @@ public class IncubyteTDDAssessment {
 
         String[] splitTokens = numberSection.split(delimiterPattern , INCLUDE_EMPTY_TOKENS);
 
-        return Arrays.stream(splitTokens)
-                .filter(token -> {
-                    // "1,," "1,\n2"
-                    boolean isInvalidFormat = token.isBlank();
-                    if (isInvalidFormat){
-                        throw new RuntimeException("format error: %s".formatted(numberSection));
-                    }
-                    return false;
-                })
+        List<Integer> numbers = Arrays.stream(splitTokens)
+                .filter(token -> !token.isBlank())
                 .map(token -> Integer.parseInt(token.trim()))
                 .toList();
+
+        // check format ( "1," , "1,,", "1,\n2" )
+        if (numbers.size() != splitTokens.length) {
+            throw new RuntimeException("format error : %s".formatted(numberSection));
+        }
+
+        return numbers;
     }
 
     static private List<Integer> findNegativeNumbers(List<Integer> numbers) {

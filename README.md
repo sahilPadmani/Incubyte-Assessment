@@ -6,10 +6,8 @@ This project showcases a **String Calculator** built using **Test-Driven Develop
 
 ## 🛠 Method Signature
 
-
-
 ```java
-public int add(String numbers) throws ContainsNegativeNumbersException
+public int add(String numbers)
 ```
 
 
@@ -17,51 +15,51 @@ public int add(String numbers) throws ContainsNegativeNumbersException
 
 ---
 
-### 🔍 1. Empty Input Returns Zero
+### 🔍 1. Empty String"
 📥 **Input:** `""`  
 ✅ **Output:** `0`
 
 ---
 
-### 🔍 2. Invalid Comma Format
-📥 **Input:** `"5,,"`  
-❌ **Exception:** `RuntimeException`
+### 🔍 2. Multiple Numbers with Delimiter
+📥 **Input:** `"1,2,3,4"`  
+✅ **Output:** `10`
 
 ---
 
-### 🔍 3. Improper Newline Usage
-📥 **Input:** `"7,\n8"`  
-❌ **Exception:** `RuntimeException`
+### 🔍 3. Multiple Numbers with Custom Delimiter Format
+📥 **Input:** `"//;\n1;2;3"`  
+✅ **Output:** `6`
 
 ---
 
-### 🔍 4. Valid Comma-Separated Numbers
-📥 **Input:** `"3,4,5,3"`  
-✅ **Output:** `15`
+### 🔍 4. Multiple Negative Numbers
+📥 **Input:** `"1,-2,3,-5"`  
+❌ **Exception:** `negative numbers not allowed <-2,-5>`
 
 ---
 
-### 🔍 5. Custom Delimiter with No Numbers
-📥 **Input:** `"//#\n"`  
+### 🔍 5. Multiple Negative Numbers In Custom Format
+📥 **Input:** `"//:\n1:-2:3:-5"`  
+❌ **Exception:** `negative numbers not allowed <-2,-5>`
+
+---
+
+### 🔍 6. Empty String In Custom Format
+📥 **Input:** `"//;\n"`  
 ✅ **Output:** `0`
 
 ---
 
-### 🔍 6. Custom Delimiter with Valid Input
-📥 **Input:** `"//#\n4#3#5"`  
-✅ **Output:** `12`
+### 🔍 7. Invalid String Format
+📥 **Input:** `"1,,"`  
+❌ **Exception:** `RuntimeException`
 
 ---
 
-### 🔍 7. Multiple Negative Numbers
-📥 **Input:** `"8,-3,2,-7"`  
-❌ **Exception:** `negative numbers not allowed <-3,-7>`
-
----
-
-### 🔍 8. Negative Numbers with Custom Delimiter
-📥 **Input:** `"//@\n6@-4@2@-9"`  
-❌ **Exception:** `negative numbers not allowed <-4,-9>`
+### 🔍 8. Invalid String Format
+📥 **Input:** `"1,\n2"`  
+❌ **Exception:** `RuntimeException`
 
 ---
 
