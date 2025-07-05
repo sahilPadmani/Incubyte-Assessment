@@ -20,4 +20,11 @@ public class StringCalculatorTest {
     public void testEmptyStringReturnsZero() {
         assertEquals(0, calculator.add(""));
     }
+
+    @Test
+    public void testMultipleNumbersCommaDelimited() {
+        assertEquals(10, calculator.add("1,2,3,4"));
+    }
+
+
 }
